@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon mamaco.png" type="image/x-icon">
+  <title>Comic Con Brasil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Comic Con Brasil
+    </h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="sobre.html">Sobre o Evento</a>
+    <a href="ingressos.html">Ingressos</a>
+    <a href="programação.html">Agenda</a>
+    <a href="participantescomic.html">Celebridades</a>
+    <a href="interacao.html">Interações</a>
+  </nav>
+
+  <main class="conteudo">
+    <section>
+      <img src="ccxp-2019.png" alt="Banner Comic Con" style="width:100%; border-radius: 10px;">
+      <center><h2>Garanta seu Ingresso Agora!</h2>
+      <p>Prepare-se para viver a maior experiência geek da sua vida! <strong>Comic Con Brasil</strong> está chegando!</p></center>
+    <section class="contagem-container">
+    <h2>Faltam apenas:</h2>
+      <div id="contador" class="contador-dinamico"></div>
+    </section>
+
+
+
+    </section>
+
+    <section>
+      <h3>Destaques</h3>
+      <ul>
+        <li>Atrações confirmadas: painéis de animes, quadrinhos e games!</li>
+        <li>Convidados especiais: artistas, dubladores e influencers</li>
+        <li>Mapa interativo do evento</li>
+      </ul>
+    </section>
+  </main>
+  <script>
+  function atualizarContador() {
+    const dataEvento = new Date("2025-09-01T10:00:00"); // Data do evento
+    const agora = new Date();
+    const tempoRestante = dataEvento - agora;
+
+    if (tempoRestante <= 0) {
+      document.getElementById("contador").innerHTML = "O evento começou!";
+      return;
+    }
+
+    const dias = Math.floor(tempoRestante / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((tempoRestante / (1000 * 60 * 60)) % 24);
+    const minutos = Math.floor((tempoRestante / (1000 * 60)) % 60);
+    const segundos = Math.floor((tempoRestante / 1000) % 60);
+
+    document.getElementById("contador").innerHTML =
+      `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+  }
+
+  setInterval(atualizarContador, 1000);
+  atualizarContador(); // Executa ao carregar
+</script>
+<footer>
+  <footer>
+  <p>© 2025 Comic Con – Todos os direitos reservados.</p>
+  <a href="termos.html">Termos de Uso e Política de Privacidade</a> |
+  <a href="contato.html">Fale Conosco</a>
+</footer>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon mamaco.png" type="image/x-icon">
+  <title>Ingressos - Comic Con</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Comic Con Brasil</h1>
+
+  </header>  
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="sobre.html">Sobre o Evento</a>
+    <a href="ingressos.html">Ingressos</a>
+    <a href="programação.html">Agenda</a>
+    <a href="participantescomic.html">Celebridades</a>
+    <a href="interacao.html">Interações</a>
+    </nav>
+
+  <main class="container">
+    <section>
+      <h2>Tipos de Ingresso</h2>
+      <ul>
+        <li><strong>Inteira:</strong> R$ 200,00</li>
+        <li><strong>Meia-entrada:</strong> R$ 100,00 (estudantes, idosos, etc.)</li>
+        <li><strong>VIP:</strong> R$ 450,00 (com benefícios exclusivos)</li>
+        <li><strong>Passaporte (todos os dias):</strong> R$ 600,00</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Área do Participante</h2>
+      <p>Simule seu acesso para visualizar seus ingressos.</p>
+      <form onsubmit="event.preventDefault(); mostrarIngresso();">
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" required><br><br>
+
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha" required><br><br>
+
+        <button type="submit">Entrar</button>
+      </form>
+
+      <div id="ingressoInfo" style="display: none; margin-top: 20px;">
+        <h3>Obrigado Por comprar os ingressos</h3>
+        <p>Você adquiriu o ingresso VIP para o evento nos dias 10 a 13 de dezembro.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+  <p>© 2025 Comic Con – Todos os direitos reservados.</p>
+  <a href="termos.html">Termos de Uso e Política de Privacidade</a> |
+  <a href="contato.html">Fale Conosco</a>
+  </footer>
+
+  <script>
+    function mostrarIngresso() {
+      document.getElementById("ingressoInfo").style.display = "block";
+    }
+  </script>
+</body>
+</html>

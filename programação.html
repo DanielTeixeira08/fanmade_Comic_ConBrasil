@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="favicon mamaco.png" type="image/x-icon">
+  <title>Programação - Comic Con</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .filtros {
+      margin: 20px auto;
+      max-width: 800px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+    .tabela-programacao {
+      max-width: 1000px;
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .tabela-programacao th, .tabela-programacao td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    .tabela-programacao th {
+      background-color: #ff9100;
+      color: rgb(0, 0, 0);
+    }
+    .tabela-programacao td {
+      background-color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <header class="topo">
+    <h1>Comic Con Brasil</h1>
+  </header>
+  <nav>
+     <a href="index.html">Home</a>
+    <a href="sobre.html">Sobre o Evento</a>
+    <a href="ingressos.html">Ingressos</a>
+    <a href="programação.html">Agenda</a>
+    <a href="participantescomic.html">Celebridades</a>
+    <a href="interacao.html">Interações</a>
+  </nav>
+
+
+  <main>
+    <section class="filtros">
+      <select id="filtroPalco">
+        <option value="">Todos os palcos</option>
+        <option value="palco1">Palco 1</option>
+        <option value="palco2">Palco 2</option>
+      </select>
+      <select id="filtroCategoria">
+        <option value="">Todas as categorias</option>
+        <option value="games">Games</option>
+        <option value="cosplay">Cosplay</option>
+        <option value="quadrinhos">Quadrinhos</option>
+      </select>
+    </section>
+
+    <table class="tabela-programacao">
+      <thead>
+        <tr>
+          <th>Dia</th>
+          <th>Horário</th>
+          <th>Palco</th>
+          <th>Categoria</th>
+          <th>Atividade</th>
+        </tr>
+      </thead>
+  <tbody id="corpoTabela">
+<tr data-palco="palco1" data-categoria="games">
+  <td>13/12</td>
+  <td>10:00</td>
+  <td>Palco 1</td>
+  <td>Games</td>
+  <td>Apresentação de Lançamentos</td>
+</tr>
+<tr data-palco="palco2" data-categoria="cosplay">
+  <td>10/12</td>
+  <td>12:00</td>
+  <td>Palco 2</td>
+  <td>Cosplay</td>
+  <td>Desfile de Cosplayers</td>
+</tr>
+<tr data-palco="palco1" data-categoria="quadrinhos">
+  <td>13/12</td>
+  <td>14:00</td>
+  <td>Palco 1</td>
+  <td>Quadrinhos</td>
+  <td>Painel com Autores</td>
+</tr>
+<tr data-palco="palco2" data-categoria="games">
+  <td>10/12</td>
+  <td>16:00</td>
+  <td>Palco 2</td>
+  <td>Games</td>
+  <td>Campeonato de eSports</td>
+</tr>
+<tr data-palco="palco1" data-categoria="cosplay">
+  <td>11/12</td>
+  <td>17:00</td>
+  <td>Palco 1</td>
+  <td>Cosplay</td>
+  <td>Batalha de Personagens</td>
+  <tr data-palco="palco1" data-categoria="games">
+</tr>
+  <td>13/12</td>
+  <td>10:00</td>
+  <td>Palco 1</td>
+  <td>Games</td>
+  <td>Apresentação de Lançamentos</td>
+</tr>
+  <tr data-palco="palco2" data-categoria="cosplay">
+  <td>11/12</td>
+  <td>12:00</td>
+  <td>Palco 2</td>
+  <td>Cosplay</td>
+  <td>Desfile de Cosplayers</td>
+</tr>
+<tr data-palco="palco1" data-categoria="quadrinhos">
+  <td>12/12</td>
+  <td>14:00</td>
+  <td>Palco 1</td>
+  <td>Quadrinhos</td>
+  <td>Painel com Autores</td>
+</tr>
+<tr data-palco="palco2" data-categoria="quadrinhos">
+  <td>10/12</td>
+  <td>15:00</td>
+  <td>Palco 2</td>
+  <td>Quadrinhos</td>
+  <td>Workshop de HQ com artistas nacionais</td>
+</tr>
+<tr data-palco="palco1" data-categoria="games">
+  <td>12/12</td>
+  <td>18:00</td>
+  <td>Palco 1</td>
+  <td>Games</td>
+  <td>Gameplay ao vivo com convidados</td>
+</tr>
+<tr data-palco="palco2" data-categoria="cosplay">
+  <td>10/12</td>
+  <td>20:00</td>
+  <td>Palco 2</td>
+  <td>Cosplay</td>
+  <td>Desfile Final + Premiação</td>
+</tr>
+      </tbody>
+    </table>
+    <div id="mensagemVazia" style="display: none; text-align: center; color: #f50; font-weight: bold; margin-top: 20px;">
+  Nenhuma atividade encontrada para os filtros selecionados.
+</div>
+  </main>
+
+ <footer>
+<footer>
+  <p>© 2025 Comic Con – Todos os direitos reservados.</p>
+  <a href="termos.html">Termos de Uso e Política de Privacidade</a> |
+  <a href="contato.html">Fale Conosco</a>
+</footer>
+
+</footer>
+  <script>
+    const filtroPalco = document.getElementById('filtroPalco');
+    const filtroCategoria = document.getElementById('filtroCategoria');
+    const linhas = document.querySelectorAll('#corpoTabela tr');
+ 
+function filtrar() {
+  const palco = filtroPalco.value;
+  const categoria = filtroCategoria.value;
+
+  let algumVisivel = false;
+
+  linhas.forEach(linha => {
+    const palcoLinha = linha.dataset.palco;
+    const categoriaLinha = linha.dataset.categoria;
+
+    const mostrar = (!palco || palco === palcoLinha) && (!categoria || categoria === categoriaLinha);
+    linha.style.display = mostrar ? '' : 'none';
+
+    if (mostrar) {
+      algumVisivel = true;
+    }
+  });
+
+  // Mostra ou esconde a mensagem "Nenhum resultado"
+  const mensagem = document.getElementById("mensagemVazia");
+  mensagem.style.display = algumVisivel ? 'none' : '';
+}
+
+
+    filtroPalco.addEventListener('change', filtrar);
+    filtroCategoria.addEventListener('change', filtrar);
+  </script>
+</body>
+</html>
